@@ -1,9 +1,21 @@
+@import './../../../../styles.scss';
+
+@mixin borderStyling($b, $r) {
+  border: $b solid white;
+  border-radius: $r;
+}
+
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
 nav {
   position: absolute;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@include dFlex($jc: space-between);
   width: calc(100% - 64px);
   padding: 32px;
   > img {
@@ -11,10 +23,7 @@ nav {
     height: 64px;
   }
   > div {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 16px;
+    @include dFlex($jc: flex-end, $g: 16px);
     width: 500px;
   }
 }
@@ -25,13 +34,10 @@ a {
 }
 
 .phone-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include dFlex($jc: space-between);
   padding: 8px;
-  background-color: rgb(196, 0, 0);
-  border: 1px solid white;
-  border-radius: 16px;
+  background-color: $dark_red;
+  @include borderStyling(2px, 12px);
   &:hover {
     background-color: red;
   }
@@ -42,11 +48,10 @@ a {
 }
 
 .links {
-  display: flex;
-  gap: 12px;
+  @include dFlex($g: 12px);
   > a {
     &:hover {
-      color: red;
+      color: $dark_red;
     }
   }
 }
