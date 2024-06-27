@@ -1,0 +1,36 @@
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(auto - 48px);
+    padding: 24px 0 24px 0;
+}
+
+h2 {
+    margin-top: 24px;
+    font-size: 38px;
+}
+
+.order-container{
+    display: flex;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.steps-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 33.33%;
+    height: 300px;
+    >img {
+        width: 40%;
+        height: auto;
+    }
+    >span {
+        text-align: center;
+        font-size: 26px;
+    }
+}
